@@ -10,7 +10,8 @@ let scrollingArea;
 const clones = [];
 
 //
-// 1.Calculating scrollable area
+// 1.Calculating scrollable
+// 2.Total width of slider(visible) - Total width of innerblock(hidden due to overflow)
 const getArea = () => {
   scrollingArea =
     innerblock.getBoundingClientRect().width -
@@ -37,9 +38,9 @@ const addClones = () => {
 //2.if inners block is moved equally or more than the scrollable area
 //  we run the function
 slider.addEventListener("scroll", e => {
-  //   console.log(e.target.scrollLeft);
   if (e.target.scrollLeft >= getArea()) {
     addClones();
+    // slider.scrollTo(getArea() / 2, 0);
   }
   console.log(clones);
 });
