@@ -7,7 +7,7 @@ const items = [...document.querySelectorAll(".item")];
 // let scrollingArea = innerblockWidth - sliderWidth;
 let scrollingArea;
 
-const clones = [];
+let clones = [];
 
 //
 // 1.Calculating scrollable
@@ -40,7 +40,10 @@ const addClones = () => {
 slider.addEventListener("scroll", e => {
   if (e.target.scrollLeft >= getArea()) {
     addClones();
-    // slider.scrollTo(getArea() / 2, 0);
+    // clones = clones.slice(0, items.length);
+    // innerblock.innerHTML = "";
+    // clones.forEach(clone => {
+    //   innerblock.appendChild(clone);
+    // });
   }
-  console.log(clones);
 });
