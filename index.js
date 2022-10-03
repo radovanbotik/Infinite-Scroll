@@ -2,9 +2,10 @@ const slider = document.querySelector(".slider");
 const innerblock = document.querySelector(".innerblock");
 const items = [...document.querySelectorAll(".item")];
 
-const innerblockWidth = innerblock.getBoundingClientRect().width;
-const sliderWidth = slider.getBoundingClientRect().width;
-let scrollingArea = innerblockWidth - sliderWidth;
+// const innerblockWidth = innerblock.getBoundingClientRect().width;
+// const sliderWidth = slider.getBoundingClientRect().width;
+// let scrollingArea = innerblockWidth - sliderWidth;
+let scrollingArea;
 
 const clones = [];
 
@@ -37,7 +38,7 @@ const addClones = () => {
 //  we run the function
 slider.addEventListener("scroll", e => {
   //   console.log(e.target.scrollLeft);
-  if (e.target.scrollLeft >= scrollingArea) {
+  if (e.target.scrollLeft >= getArea()) {
     addClones();
   }
   console.log(clones);
